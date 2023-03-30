@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Time-based redirect</title>
+</head>
+<body>
+  <script>
+    var now = new Date();
+    var hours = now.getHours();
+    var timezoneOffset = now.getTimezoneOffset();
+    var mountainTimezoneOffset = 420; // 7 hours * 60 minutes = 420 minutes
+    var redirectTo = (hours >= 14 && timezoneOffset == mountainTimezoneOffset) ? "https://floify.zoom.us/j/84333009673?pwd=ZjAxQ1dzN2xNUXdwcEUxa1dhWWpLUT09" : "https://floify.zoom.us/j/83373206529?pwd=ejNxQk9NVGNiVmtjeS9NYWFVYXYwZz09";
+    window.location.replace(redirectTo);
+  </script>
+</body>
+</html>
